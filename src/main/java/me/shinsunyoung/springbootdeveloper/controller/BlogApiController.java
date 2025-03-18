@@ -51,6 +51,7 @@ public class BlogApiController {
                                                  @RequestBody UpdateArticleRequest request) {
 
         Article updatedArticle = blogService.update(id, request);
+        System.out.print("실행2222");
 
         return ResponseEntity.ok()
                 .body(updatedArticle);
