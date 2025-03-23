@@ -36,10 +36,14 @@ public class Article {
     @Column(name="updated_at")
     private LocalDateTime updatedAt;
 
+    @Column(name="author", nullable = false)
+    private String author;
+
     //생성자 위에 빌더어노테이션 사용하면 빌더 패턴으로 인스턴스 생성가능.
     //빌더패턴으로 인스턴스 생성 시 필드매핑이 보여서 가독성 증가.
     @Builder
-    public Article(String title, String content){
+    public Article(String author,  String title, String content){
+        this.author = author;
         this.title = title;
         this.content = content;
     }
